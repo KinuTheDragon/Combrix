@@ -41,3 +41,8 @@ button:has(img) {
     background-color: transparent;
     border: none;
 }
+
+.emphasis {
+    font-weight: bold;
+    color: #f80;
+}

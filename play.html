@@ -10,7 +10,7 @@
         <label for="level-select">Level select:</label>
         <select id="level-select"></select>
         <button onclick="loadLevelSelect()">Load level</button>
-        <br/>
+        <a href="contributors.html">(What do the letters in parentheses mean?)</a><br/>
         Current move: <span id="current-move">none</span><br/>
         <button onclick="undo()"><img src="undo.svg" /></button>
         <button onclick="restart()"><img src="restart.svg" /></button>
@@ -19,20 +19,21 @@
             <li>Remove all the cells. The border will turn green when you win.</li>
             <li>Click on a number to select it, then click on adjacent equal number
                 to merge them into a number that is one higher.</li>
-            <li>After merging two numbers, you MUST use their effect!</li>
+            <li>After merging two numbers, you <span class="emphasis">must</span> use their effect!</li>
             <ul>
                 <li>Merging two 1s allows you to remove two adjacent cells.</li>
                 <li>Merging two 2s allows you to use the same effect you just used.
                     (If this happens at the start of the level, there is no effect.)</li>
                 <li>Merging two 3s allows you to select a specific cell type to turn into 1s.</li>
                 <li>Merging two 4s allows you to select a specific cell.
-                    ALL cells in the same row or column as that cell will be removed.</li>
+                    <span class="emphasis">All</span> cells in the same row or column as that cell will be removed.</li>
                 <li>Merging two 5s allows you to remove a 3x3 area of cells.</li>
                 <li>Merging two 6s allows you to move a numbered cell to an empty cell.</li>
                 <li>Merging two 7s allows you to select a specific cell type to increment.
                     (You cannot increment 9s or blanks.)</li>
                 <li>Merging two 8s allows you to click on a cell and remove all cells connected to it.</li>
-                <li>Merging two 9s IMMEDIATELY removes all cells, allowing you to instantly win the puzzle.</li>
+                <li>Merging two 9s <span class="emphasis">immediately</span>
+                    removes all cells, allowing you to instantly win the puzzle.</li>
             </ul>
             <li>You cannot win if you still have an effect to use!</li>
         </ul>

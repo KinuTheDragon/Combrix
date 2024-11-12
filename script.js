@@ -137,6 +137,7 @@ function mouseDownEvent(e) {
         setTimeout(() => {allowMouseEvents = true;}, 1);
     }
     if (e.type === "mousedown" && !allowMouseEvents) return;
+    if (e.type === "mousedown" && e.button !== 0) return;
     onClickCell(+e.target.getAttribute("row"), +e.target.getAttribute("col"));
 }
 
@@ -150,18 +151,21 @@ function onClickCell(row, col) {
     }
     if (cell === 0) return;
     if (selectedCell) {
-        let currentlySelectedCell = puzzle[selectedCell[0]][selectedCell[1]];
-        if (cell === currentlySelectedCell && isAdjacent(row, col, ...selectedCell)) {
-            puzzle[row][col] = cell + 1;
-            puzzle[selectedCell[0]][selectedCell[1]] = 0;
-            selectedCell = null;
-            if (cell === 2) {
-                if (previousMergeEffect) mergeEffectData = {number: previousMergeEffect};
-            } else if (cell === 9) {
-                puzzle = puzzle.map(row => row.fill(null));
-            } else mergeEffectData = {number: cell};
-        } else {
-            selectedCell = [row, col];
+        if (selectedCell[0] === row && selectedCell[1] === col) undo();
+        else {
+            let currentlySelectedCell = puzzle[selectedCell[0]][selectedCell[1]];
+            if (cell === currentlySelectedCell && isAdjacent(row, col, ...selectedCell)) {
+                puzzle[row][col] = cell + 1;
+                puzzle[selectedCell[0]][selectedCell[1]] = 0;
+                selectedCell = null;
+                if (cell === 2) {
+                    if (previousMergeEffect) mergeEffectData = {number: previousMergeEffect};
+                } else if (cell === 9) {
+                    puzzle = puzzle.map(row => row.fill(null));
+                } else mergeEffectData = {number: cell};
+            } else {
+                selectedCell = [row, col];
+            }
         }
     } else {
         saveState();
