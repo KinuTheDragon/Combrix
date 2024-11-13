@@ -105,7 +105,7 @@ Eight Snake (M)
 
 0 mod 4 (KTD)
 . . . .
-
+-
 4488
 
 Too Easy (KTD)
@@ -118,7 +118,7 @@ Perfection (KTD)
 Chain (KTD)
 .
  112345678
-
+-
  ....
 `.slice(1, -1).split("\n\n").map(x => {
     x = x.replaceAll("-", "");
