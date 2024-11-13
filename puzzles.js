@@ -73,6 +73,21 @@ Octothorpe (FK)
 ......
  .  .
 
+4x4 (KTD)
+44
+  44
+.
+   .
+    551
+    111
+
+Star (KTD)
+  4
+55455
+ ...
+ ...
+.   .
+
 Six Shift (G)
 665
 5..
@@ -88,9 +103,23 @@ Eight Snake (M)
    .      1
    1.1.1.1.
 
+0 mod 4 (KTD)
+. . . .
+
+4488
+
 Too Easy (KTD)
 991234
 ..5678
+
+Perfection (KTD)
+7777 .
+
+Chain (KTD)
+.
+ 112345678
+
+ ....
 `.slice(1, -1).split("\n\n").map(x => {
     x = x.replaceAll("-", "");
     let newline = x.indexOf("\n");
