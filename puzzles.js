@@ -78,8 +78,8 @@ Octothorpe (FK)
   44
 .
    .
-    5511
-      11
+     5511
+       11
 
 Star (KTD)
   4
