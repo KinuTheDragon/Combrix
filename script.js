@@ -1,5 +1,6 @@
 const puzzleTable = document.getElementById("puzzle");
 const currentMoveText = document.getElementById("current-move");
+const moveCounter = document.getElementById("move-count");
 const levelSelect = document.getElementById("level-select");
 
 let puzzle;
@@ -94,6 +95,7 @@ function updateGraphics() {
     else
         puzzleTable.classList.remove("solved");
     currentMoveText.innerText = getCurrentMoveText();
+    moveCounter.innerText = "" + (undoStack.length - (mergeEffectData || selectedCell ? 1 : 0));
     if (mergeEffectData) {
         switch (mergeEffectData.number) {
             case 1:
